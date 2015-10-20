@@ -1,0 +1,31 @@
+package Main;
+
+import javax.swing.JOptionPane;
+
+public class MA {
+public static void main(String[] args){
+
+	String firstName=JOptionPane.showInputDialog("First Name","Enter First Name");
+	String lastName=JOptionPane.showInputDialog("Last Name","Enter Last Name");
+	String password= "jacob";
+			//JOptionPane.showInputDialog("Password","Enter Password");
+	String realPass = "jacob";
+	String fullName= firstName + " " + lastName;
+	String anotherFirstName= firstName;
+	
+	System.out.println(fullName);
+	//System.out.println(firstName.equals(lastName));
+	//System.out.println(firstName.equals(anotherFirstName));
+	
+	if (password == realPass){
+		
+		System.out.println("Password Correct");
+	}
+	else{
+		
+		System.out.println("Password Incorrect");
+	}
+		
+	
+}
+}

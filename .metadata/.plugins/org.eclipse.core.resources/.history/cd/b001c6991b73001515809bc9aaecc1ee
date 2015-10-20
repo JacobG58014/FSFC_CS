@@ -1,0 +1,15 @@
+package Main;
+
+public class MA {
+public static void main(String[] args){
+
+	String firstName="Joe";
+	String lastName="Bloggs";
+	String fullName= firstName + " " + lastName;
+	String anotherFirstName= firstName;
+	
+	System.out.println(fullName);
+	System.out.println(firstName.equals(lastName));
+	System.out.println(firstName.equals(anotherFirstName));
+}
+}

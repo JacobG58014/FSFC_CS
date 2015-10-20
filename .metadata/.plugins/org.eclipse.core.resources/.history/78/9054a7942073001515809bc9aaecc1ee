@@ -1,0 +1,40 @@
+package Main;
+
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.FlowLayout;
+
+public class MA extends JFrame{
+	
+	private JLabel text1;
+	public MA(){
+		super("hello");
+		setLayout(new FlowLayout());
+	}
+	
+public static void main(String[] args){
+
+	String firstName=JOptionPane.showInputDialog("First Name","Enter First Name");
+	String lastName=JOptionPane.showInputDialog("Last Name","Enter Last Name");
+	String password= JOptionPane.showInputDialog("Password","Enter Password");
+	String realPass = "jacob";
+	String fullName= firstName + " " + lastName;
+	//String anotherFirstName= firstName;
+	
+	System.out.println(fullName);
+	//System.out.println(firstName.equals(lastName));
+	//System.out.println(firstName.equals(anotherFirstName));
+	
+	if (password.equals(realPass)){
+		
+		System.out.println("Password Correct");
+	}
+	else{
+		
+		System.out.println("Password Incorrect");
+	}
+		
+	
+}
+}

@@ -43,7 +43,7 @@ public static void main(String[] args){
 	
 	if (password.equals(realPass)){
 		
-		entered();
+		entered(fullName);
 	}
 	
 	else{
@@ -56,7 +56,7 @@ public static void main(String[] args){
 				password= JOptionPane.showInputDialog("Password","Enter Password");
 				if (password.equals(realPass)){
 					
-					entered();
+					entered(fullName);
 				}
 		}
 		
@@ -68,9 +68,10 @@ public static void main(String[] args){
 		}
 	}
 }
-	public void setfullName(String fullName) { this.fullName = fullName; }
-			public String getfullName() { return fullName; }
-public static void entered() {
+	
+			
+			
+public static void entered(String fullName) {
 			System.out.println("Password Correct");
 			
 			
