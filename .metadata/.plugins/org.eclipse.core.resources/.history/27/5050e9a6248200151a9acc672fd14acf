@@ -1,0 +1,38 @@
+package Main;
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+public class guessing {
+	
+	public static void main (String args[]){
+		Scanner input = new Scanner(System.in);
+		
+
+		
+		
+		
+		System.out.println("Guess the number! (0-100)");
+		int guesses = 0;
+		int guess;
+		int number = ThreadLocalRandom.current().nextInt(0, 100 + 1);
+		boolean correct = false;
+		
+		while (correct == false){
+		guess = input.nextInt(  );
+		
+		if(guess > number){
+			System.out.println("Too High! Tries: " + guesses);
+		}
+		else if(guess < number){
+			System.out.println("Too Low! Tries: " + guesses);
+
+		}
+		else {
+			correct = true;
+		}
+	}
+
+		System.out.println("You Win!");
+		System.out.println("You Did it in "+ guesses + " tries");
+
+	}
+}
