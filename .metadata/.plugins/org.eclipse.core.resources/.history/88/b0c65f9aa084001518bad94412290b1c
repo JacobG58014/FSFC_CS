@@ -1,0 +1,52 @@
+package Application;
+
+public class Game {
+	boolean running = false;
+	
+	public static void main (String args[])
+{
+		
+
+}
+	
+	public void tick(){
+		
+	}
+	
+	private synchronized void start(){
+		if(running)
+			return;
+		running = true;
+		
+	}
+	
+	private synchronized void stop(){
+		if(!running)
+			return;
+		
+		running = false;
+	}
+	
+	public void run(){
+		long lastTime = System.nanoTime();
+		final double amountOfTicks = 60.0;
+		double ns = 1000000000/amountOfTicks;
+		double delta = 0;
+		int updates = 0;
+		int frames = 0;
+		long timer = System.currentTimeMillis();
+		
+		while(running){
+			long now = System.nanoTime();
+			delta += (now - lastTime) / ns;
+			lastTime = now;
+			if(delta >=1){
+				tick();
+				updates++;
+				delta--;
+			}
+			
+			frames ++;
+		}
+	}
+}

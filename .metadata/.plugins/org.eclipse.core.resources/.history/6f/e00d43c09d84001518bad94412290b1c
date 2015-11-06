@@ -93,6 +93,6 @@ public class p {
 void Pressed(int Cookies, JLabel lblCookies){
 	Cookies = Cookies + 1;
 	lblCookies.setText("Cookies: "+ Cookies);
-	System.out.println("Method");
+	
 }
 }

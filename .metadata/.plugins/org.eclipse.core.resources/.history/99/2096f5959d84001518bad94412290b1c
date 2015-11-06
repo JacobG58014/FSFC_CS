@@ -71,7 +71,7 @@ public class p {
 		lblCookies.setFont(new Font("Gungsuh", Font.PLAIN, 20));
 		lblCookies.setBounds(292, 0, 152, 53);
 		frame.getContentPane().add(lblCookies);
-	
+	}
 		JButton btnGoldenCookie = new JButton("");
 		btnGoldenCookie.setIcon(new ImageIcon("C:\\Users\\CompUser\\Pictures\\GOLDEN.png"));
 		btnGoldenCookie.setBounds(292, 51, 142, 168);
@@ -88,11 +88,11 @@ public class p {
 		btnNewButton.setToolTipText("I AM A COOKIE");
 		btnNewButton.setBounds(0, 0, 293, 219);
 		frame.getContentPane().add(btnNewButton);
-	}	
+		
 		
 void Pressed(int Cookies, JLabel lblCookies){
 	Cookies = Cookies + 1;
 	lblCookies.setText("Cookies: "+ Cookies);
-	System.out.println("Method");
+	
 }
 }

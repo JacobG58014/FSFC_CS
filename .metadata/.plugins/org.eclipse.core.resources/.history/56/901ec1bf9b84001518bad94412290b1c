@@ -13,7 +13,6 @@ import java.awt.Font;
 import javax.swing.JMenuBar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
 
 public class p {
 
@@ -51,7 +50,7 @@ public class p {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.setResizable(false);
+		
 		
 		
 		
@@ -67,11 +66,12 @@ public class p {
 		btnNewButton_3.setBounds(292, 217, 142, 45);
 		frame.getContentPane().add(btnNewButton_3);
 		
-		JLabel lblCookies = new JLabel("Cookies: 0");
-		lblCookies.setFont(new Font("Gungsuh", Font.PLAIN, 20));
-		lblCookies.setBounds(292, 0, 152, 53);
-		frame.getContentPane().add(lblCookies);
-	
+		JTextPane txtpnCookies = new JTextPane();
+		txtpnCookies.setFont(new Font("DFKai-SB", Font.PLAIN, 18));
+		txtpnCookies.setText("Cookies: "+ Cookies);
+		txtpnCookies.setBounds(292, 0, 142, 50);
+		frame.getContentPane().add(txtpnCookies);
+		
 		JButton btnGoldenCookie = new JButton("");
 		btnGoldenCookie.setIcon(new ImageIcon("C:\\Users\\CompUser\\Pictures\\GOLDEN.png"));
 		btnGoldenCookie.setBounds(292, 51, 142, 168);
@@ -81,18 +81,17 @@ public class p {
 			public void actionPerformed(ActionEvent e){
 			//	Cookies = (Cookies + 1);
 				System.out.println("Pressed");
-				Pressed(Cookies, lblCookies);
+				Pressed(Cookies, txtpnCookies);
 			}
 		});
 	btnNewButton.setIcon(new ImageIcon("C:\\Users\\CompUser\\Pictures\\Cookie.jpg"));
 		btnNewButton.setToolTipText("I AM A COOKIE");
 		btnNewButton.setBounds(0, 0, 293, 219);
 		frame.getContentPane().add(btnNewButton);
-	}	
-		
-void Pressed(int Cookies, JLabel lblCookies){
+	}
+void Pressed(int Cookies, JTextPane txtpnCookies){
 	Cookies = Cookies + 1;
-	lblCookies.setText("Cookies: "+ Cookies);
-	System.out.println("Method");
+	txtpnCookies.setText("Cookies: "+ Cookies);
+
 }
 }
