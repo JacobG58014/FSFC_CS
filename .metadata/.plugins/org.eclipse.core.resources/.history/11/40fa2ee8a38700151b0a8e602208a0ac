@@ -92,7 +92,6 @@ public class p {
 		
 void Pressed(int Cookies, JLabel lblCookies){
 	Cookies = Cookies + 1;
-	lblCookies.getText();
 	lblCookies.setText("Cookies: "+ Cookies);
 	System.out.println("Method");
 }
