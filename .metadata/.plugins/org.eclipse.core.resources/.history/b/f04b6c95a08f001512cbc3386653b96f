@@ -278,7 +278,7 @@ public class Game extends Canvas implements Runnable {
 
 		c.render(g);
 
-		g2dtranslate(-cam.getCamX(), -cam.getCamY());
+		g2dtranslate(-cam.getCamX(), -0cam.getCamY());
 
 
 		/////////////////////////////////

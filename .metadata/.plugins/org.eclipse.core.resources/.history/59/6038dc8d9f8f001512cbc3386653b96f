@@ -4,14 +4,23 @@ package Application;
 
 
 import java.awt.Canvas;
+
 import java.awt.Color;
+
 import java.awt.Dimension;
+
 import java.awt.Graphics;
-import java.awt.Graphics2D;
+
 import java.awt.event.KeyEvent;
+
 import java.awt.image.BufferStrategy;
+
 import java.awt.image.BufferedImage;
+
 import java.io.IOException;
+
+
+
 
 import javax.swing.JFrame;
 
@@ -66,8 +75,6 @@ public class Game extends Canvas implements Runnable {
 	private Controller c;
 
 	private Textures tex;
-	
-	Camera cam;
 
 	
 
@@ -76,14 +83,10 @@ public class Game extends Canvas implements Runnable {
 		p.tick();
 
 		c.tick();
-		
-		cam.tick();
 
 	}
 
 	public void init(){
-		
-		cam = new Camera(0,0);
 
 		requestFocus();
 
@@ -113,7 +116,6 @@ public class Game extends Canvas implements Runnable {
 
 		c = new Controller(this, tex);
 
-		cam = new Camera(200, 200);
 		
 
 		
@@ -257,10 +259,10 @@ public class Game extends Canvas implements Runnable {
 		
 
 		Graphics g = bs.getDrawGraphics();
-		Graphics2D g2d = (Graphics2D) g;
+
 		/////////////////////////////////
 
-		g2dtranslate(cam.getCamX(), cam.getCamY());
+		
 
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 
@@ -278,8 +280,7 @@ public class Game extends Canvas implements Runnable {
 
 		c.render(g);
 
-		g2dtranslate(-cam.getCamX(), -cam.getCamY());
-
+		
 
 		/////////////////////////////////
 
@@ -289,11 +290,6 @@ public class Game extends Canvas implements Runnable {
 
 		
 
-	}
-	
-private void g2dtranslate(double camX, double camY) {
-		// TODO Auto-generated method stub
-		
 	}
 
 public void keyPressed(KeyEvent e){
@@ -305,28 +301,24 @@ public void keyPressed(KeyEvent e){
 		if (key == KeyEvent.VK_RIGHT){
 
 			p.setVelX(5);
-			cam.right();
 
 		}
 
 		else if (key == KeyEvent.VK_LEFT){
 
 			p.setVelX(-5);
-			cam.left();
 
 		}
 
 		else if (key == KeyEvent.VK_DOWN){
 
 			p.setVelY(5);
-			cam.down();
 
 		}
 
 		else if (key == KeyEvent.VK_UP){
 
 			p.setVelY(-5);			
-			cam.up();
 
 }
 
@@ -349,28 +341,24 @@ public void keyPressed(KeyEvent e){
 		if (key == KeyEvent.VK_RIGHT){
 
 			p.setVelX(0);
-			cam.righto();
 
 		}
 
 		else if (key == KeyEvent.VK_LEFT){
 
 			p.setVelX(0);
-			cam.lefto();
 
 		}
 
 		else if (key == KeyEvent.VK_DOWN){
 
 			p.setVelY(0);
-			cam.downo();
 
 		}
 
 		else if (key == KeyEvent.VK_UP){
 
 			p.setVelY(0);
-			cam.upo();
 
 }
 
