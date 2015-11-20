@@ -1,0 +1,20 @@
+package Application;
+
+import java.awt.Graphics;
+
+public class Controller {
+	Game game;
+	
+	public Controller(Game game){
+		this.game = game;
+	}
+	public void tick(){
+	
+}
+
+	public void render(Graphics g){
+		
+	}
+	
+}
+
