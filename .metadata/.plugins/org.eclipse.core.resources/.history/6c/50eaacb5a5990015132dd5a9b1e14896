@@ -43,8 +43,5 @@ public class ArrayListEx {
 
 		obj.add("Georgia");
 		((ArrayList<String>) obj).trimToSize();
-		System.out.println("Current array list is:"+obj);
-		System.out.println("Number of items in array: " + obj.size());
-
 	}
 }
