@@ -1,0 +1,227 @@
+package Main;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+public class Keith extends JFrame implements ActionListener {
+	static String program;
+	static int array;
+	static String print;
+	static String yn;
+	
+	
+	double Presses = 0;
+	  JButton Btn ; // reference to the button object
+
+	
+	private JLabel text1;
+	private JLabel text2;
+	public Keith(){
+		super("You're In");
+		setLayout(new FlowLayout()); 
+		MA.setDefaultLookAndFeelDecorated(true);
+		text1 = new JLabel("Welcome");
+		text1.setToolTipText("Genius");
+		add(text1);
+		
+		JButton Btn = new JButton("Press Me");
+		    Btn.addActionListener(new ActionListener(){
+		    		public void actionPerformed(ActionEvent e){
+		    			System.out.println("Button Pressed" );
+		    			Presses = (Presses + 1);
+		    		}
+		    });
+add(Btn);   
+	
+	
+		   JButton Exit = new JButton("Close"); 
+		    
+		    Exit.addActionListener(new ActionListener(){
+		    		public void actionPerformed(ActionEvent e){
+		    			System.exit(0);
+		    		}
+		    });
+add( Exit );  
+text2 = new JLabel("Presses: "+ Presses);
+		text2.setToolTipText("Genius");
+		add(text2);
+	}
+	
+	
+public static void main(String args[]){
+	print = ("Hello! My name is Keith!");
+	print(print);
+
+	for(;;){
+		print = ("Enter a program");
+		print(print);
+		Scanner sc = new Scanner(System.in);
+		program = sc.next();
+		
+		if(program.equalsIgnoreCase("Jacob")){
+			Jacob();
+		}
+		else if(program.equalsIgnoreCase("exit")){
+			Exit();
+		}
+		else if(program.equalsIgnoreCase("array")){
+			Array();
+		}
+		else if (program.equalsIgnoreCase("Michael")){
+		Michael();
+	}
+		else if (program.equalsIgnoreCase("Password")){
+			Password();
+		}
+		print = ("---------------");
+		print(print);
+	}
+	
+	
+}
+private static void Password() {
+	int tries = 0;
+	String fullName;
+	boolean entered = false;
+	String firstName=JOptionPane.showInputDialog("First Name","Enter First Name");
+	String lastName=JOptionPane.showInputDialog("Last Name","Enter Last Name");
+	String password= JOptionPane.showInputDialog("Password","Enter Password");
+	String realPass = "jacob";
+	fullName = firstName + " " + lastName;
+	//String anotherFirstName= firstName;
+	
+	System.out.println(fullName);
+	//System.out.println(firstName.equals(lastName));
+	//System.out.println(firstName.equals(anotherFirstName));
+	
+	if (password.equals(realPass)){
+		
+		entered(fullName);
+	}
+	
+	else{
+		tries = tries + 1;
+		
+		while (tries < 5){
+			
+				System.out.println("Password Incorrect");
+				tries = tries+1;
+				password= JOptionPane.showInputDialog("Try again, Attempt: " + tries,"Enter Password");
+				if (password.equals(realPass)){
+					
+					entered(fullName);
+				}
+		}
+		
+		if (password.equals(realPass)){}
+		else{
+		System.out.println("Max number of tries reached");
+		System.out.println("System Exiting");
+		System.exit(0);
+		}
+	}
+}
+
+private static void Michael() {
+print = ("Is Stoopid");
+print(print);
+}
+
+private static void Array() {
+	print = ("How big do you want your array?");
+	print(print);
+	Scanner sc = new Scanner(System.in);
+	array = sc.nextInt();
+	int[] x = new int[array];
+
+	for (int i=0; i < x.length; i++ ){
+		x[i] = (int) (1+ Math.random() * 10);
+	}
+	printArray(x);
+	}
+
+	public static void printArray(int[] x){
+		print = ("array is: ");
+		print(print);
+		for (int i = 0; i < x.length; i++){
+	System.out.print(x[i] + " ");
+		}
+System.out.println();
+		print = ("Do you want to order the array?");
+		print(print);
+		Scanner sc = new Scanner(System.in);
+		yn = sc.next();
+		if(yn.equalsIgnoreCase("Yes")){
+			int tempVal=0;
+			//the outer for loop manages the passes (4 in this case)
+			for(int i=0;i<x.length-1;++i){
+			//the inner loop does the swapping
+			for(int j=0;j<x.length-1;++j){
+			if(x[j]>x[j+1]){
+			tempVal = x[j];
+			x[j]=x[j+1];
+			x[j+1]=tempVal;
+			}
+			}
+			}
+			//let’s print the sorted array
+			for(int i=0; i<x.length; ++i){
+			System.out.print((x[i] + " "));
+			}
+			System.out.println();
+			}
+		else if(yn.equalsIgnoreCase("No")){
+			print = ("okay then...");
+			print(print);
+		}
+		else{
+			print = ("Not Acceptable!!");
+			print(print);
+		}
+
+
+}
+private static void Exit() {
+	print = ("---Bye Bye!---");
+	print(print);
+	System.exit(0);	
+}
+public static void Jacob(){
+		print = ("Is awesome");
+		print(print);
+	}
+
+public static void print(String print){
+	 System.out.println("** " + print + " **");
+}
+public static void entered(String fullName) {
+	System.out.println("Password Correct");
+	
+	
+System.out.println("Welcome " + fullName);
+
+
+MA frame = new MA();
+frame.setSize(500,100);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setVisible(true);
+
+}
+
+
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
+// TODO Auto-generated method stub
+
+}
+}
+

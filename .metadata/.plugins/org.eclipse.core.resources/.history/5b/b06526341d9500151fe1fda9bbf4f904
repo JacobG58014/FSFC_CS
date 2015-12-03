@@ -1,0 +1,37 @@
+package theStack;
+
+import java.util.Scanner;
+
+public class StackController {
+
+	public static void main(String[] args) {
+		 int queueSize =0;
+		 System.out.print("enter a queue size ");
+		 Scanner sc = new Scanner(System.in);
+		 queueSize=sc.nextInt();
+		 Stack linearQueue = new Stack(queueSize);
+		int top = linearQueue.getTop();
+		 //add items
+		 for(int i=0; i<queueSize;i++){
+		 linearQueue.push((long)
+		(Math.random()*queueSize));
+		 }
+		 //check the contents
+		 long[] x = linearQueue.getArray();
+		 for(int i=0; i<queueSize; i++){
+		 System.out.print(x[i] + " ");
+		 }
+		 //remove an item
+		 System.out.println();
+		 linearQueue.pop();
+		 for(int i=0; i<queueSize; i++){
+		if( i<top){ System.out.print(x[i] + " ");
+		 }
+		 }
+		 x = linearQueue.getArray();
+		 for(int i=0; i<linearQueue.getTop(); i++){
+			 System.out.print(x[i]);
+		 }
+	}
+}
+

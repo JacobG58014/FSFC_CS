@@ -1,0 +1,42 @@
+package Main;
+
+import java.util.Scanner;
+
+public class LinkedList_Controller {
+	 public static void main(String[] args) {
+	 Linked_List studentDataList= new Linked_List();
+	 
+	 String Name = null;
+	 int age = 0;
+	 String Band = null;
+	 Boolean rel = false;
+	 Link link = new Link(Name, age, Band, rel);
+	 addValue(Name, age, Band, rel); 
+	 
+	 link.displayLink(Name, age, Band, rel);
+ System.out.println(" ");
+	 studentDataList.displayList();
+	
+	
+	//now try using the deleteFirst() method, then re print the list
+	 }
+	 public static void addValue(String Name, int age, String Band, Boolean rel){
+		 int amount;
+		 Scanner a = new Scanner(System.in);
+		 System.out.println("How many items do you want?");
+		 amount = a.nextInt();
+		 for(int i = 0; i < amount; i++){
+		 Linked_List studentDataList= new Linked_List();
+		 Scanner sc = new Scanner (System.in);
+		 System.out.println("Input Name");
+		 Name = sc.next();
+		 System.out.println("Input Age");
+		 age = sc.nextInt();
+		 System.out.println("Input Favourite Band");
+		 Band = sc.next();
+		 System.out.println("Relationship? (true / false) ");
+		 rel = sc.nextBoolean();
+		 studentDataList.insertFirst(Name, age, Band, rel);
+	 }
+	}
+}

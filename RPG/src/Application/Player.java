@@ -57,19 +57,19 @@ public class Player {
 
 		  if (x <= 5)
 
-			  x = 640-36;
+			  x = 5;
 
 		if (x>+ 640-32)
 
-				  x = 5;
+				  x = 640-32;
 
 		if (y <+ 0)
 
-			y = 480-45;
+			y = 0;
 
 		if (y >= 480-40)
 
-			y = 5;
+			y = 480-40;
 
 		}
 
@@ -81,7 +81,7 @@ public class Player {
 	public void render(Graphics g){
 
 		g.drawImage(tex.player, (int)x, (int)y, null);
-
+g.drawImage(tex.player2, (int)x, (int)y, null);
 		
 
 		

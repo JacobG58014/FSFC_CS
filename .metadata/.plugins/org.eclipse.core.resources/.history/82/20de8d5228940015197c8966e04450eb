@@ -1,0 +1,58 @@
+package theStack;
+
+public class Stack {
+	private int maxSize;
+	private long[] stackArray;
+	private int top;
+	
+	public Stack(int maxSize){
+		 this.maxSize=maxSize;
+		 this.setTop(-1);
+		 stackArray=new long[maxSize]; 
+		 }
+		 public void push(long j){
+		 String result = getTop()==stackArray.length-1?" Stack is full":
+		pushItem(j); // check if stack is full, if not call
+		 msgBox(result);
+		 }
+
+		 public String pushItem(long j){
+		 stackArray[setTop(getTop() + 1)]=j;
+		 return " Item added to stack";
+		 }
+
+		 public void pop(){
+		 msgBox(getTop()==-1?" Stack is empty":popItem());
+		 
+		 System.out.println(getTop());
+		 }
+
+		 public String popItem(){
+		 
+		 
+		 return "Item at the top : " + stackArray[top--]+ " removed";
+		 } 
+		 public void msgBox(String message){
+			 System.out.println("** " + message + " **");
+			 }
+			 //check if stack is empty
+			 public boolean isEmpty(){
+			 return (getTop()==-1);
+			 }
+			 //check if the stack is full
+			 public boolean isFull(){
+			 return (getTop()==stackArray.length-1);
+			 }
+			public long[] getArray() {
+				return this.stackArray = stackArray;			
+}
+			public void setTop(int top) {
+				this.top = top;
+				
+			}
+			public int getTop() {
+				return top;
+			}
+			
+			
+}

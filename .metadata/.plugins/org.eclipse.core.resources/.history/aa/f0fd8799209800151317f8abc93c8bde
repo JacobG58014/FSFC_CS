@@ -1,0 +1,20 @@
+package Main;
+
+public class Link {
+	 private String Name;
+	 private int age;
+	 private String favBand="Spice Girls";
+	 private boolean inARelationship=false;
+
+
+	 //pointer to next linkObject, notice data type
+	 private Link nextLink=null;
+	 // constructor
+	public Link(String Name, int age, String favBand,
+	boolean inARelationship){
+	 this.Name=Name;
+	 this.age=age;
+	 this.favBand=favBand;
+	 this.inARelationship=inARelationship;
+	 }
+}

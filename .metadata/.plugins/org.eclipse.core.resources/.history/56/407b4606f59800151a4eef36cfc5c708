@@ -1,0 +1,46 @@
+package Main;
+
+public class Linked_List {
+	String Name = null;
+	 int age = 0;
+	 String Band = null;
+	 Boolean rel = false;
+	Link link = new Link(Name, age, Band, rel);
+	
+	private Link first; // ref to the first link on thelist
+	public void Linked_List(){ // constructor
+		first = null; // no items on the list yet
+	}
+	public boolean isEmpty(){
+		return (first==null); // true if list is empty
+	}
+
+	public void insertFirst(String Name,int age,String
+			favBand,boolean inARelationship){
+		// make a new link
+		Link link = new
+				Link(Name,age,favBand,inARelationship);
+		if(first!=null) {
+			link.setNextLink(first);//new object's next references the (old) first link
+			first = link;// new object is placed at the start
+		}
+		else{
+			first=link;
+		}
+	}
+	public Link deleteFirst(){
+		Link deletedLink = first;
+		first = first.getNextLink(); // get the second listreference
+		return deletedLink;
+	}
+	public void displayList(){
+		System.out.print("list (first-->last): ");
+		Link current = first;
+		//loop
+		while(current!=null){
+			current.displayLink(Name, age, Band, rel);// call method to displaythe data
+			current=current.getNextLink();
+		}
+		System.out.println(" ");
+	}
+}

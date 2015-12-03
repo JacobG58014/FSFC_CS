@@ -1,0 +1,61 @@
+package Main;
+
+import java.util.Scanner;
+
+public class Keith {
+	static String program;
+	static int array;
+	static String print;
+public static void main(String args[]){
+	
+
+	for(;;){
+		System.out.println("Enter a program");
+		Scanner sc = new Scanner(System.in);
+		program = sc.next();
+		
+		if(program.equalsIgnoreCase("Jacob")){
+			Jacob();
+		}
+		else if(program.equalsIgnoreCase("exit")){
+			Exit();
+		}
+		else if(program.equalsIgnoreCase("array")){
+			Array();
+		}
+	}
+	
+}
+private static void Array() {
+print = ("How big do you want your array?");
+print(print);
+Scanner sc = new Scanner(System.in);
+array = sc.nextInt();
+int[] x = new int[array];
+
+for (int i=0; i < x.length; i++ ){
+	x[i] = (int) (1+ Math.random() * 10);
+}
+printArray(x);
+}
+
+public static void printArray(int[] x){
+
+for (int i = 0; i < x.length; i++){
+	System.out.print(x[i] + " ");
+}
+}
+private static void Exit() {
+	print = ("Bye Bye!");
+	print(print);
+	System.exit(0);	
+}
+public static void Jacob(){
+		print = ("Is awesome");
+		print(print);
+	}
+
+public static void print(String print){
+	 System.out.println("** " + print + " **");
+}
+}

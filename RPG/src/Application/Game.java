@@ -83,7 +83,7 @@ public class Game extends Canvas implements Runnable {
 
 	public void init(){
 		
-		cam = new Camera(0,0);
+		cam = new Camera(200,200);
 
 		requestFocus();
 
@@ -278,7 +278,7 @@ public class Game extends Canvas implements Runnable {
 
 		c.render(g);
 
-		g2dtranslate(-cam.getCamX(), -cam.getCamY());
+		g2d.translate(-cam.getCamX(), -cam.getCamY());
 
 
 		/////////////////////////////////
@@ -291,9 +291,10 @@ public class Game extends Canvas implements Runnable {
 
 	}
 	
+
+
 private void g2dtranslate(double camX, double camY) {
-		// TODO Auto-generated method stub
-		
+		//System.out.println("OUT");
 	}
 
 public void keyPressed(KeyEvent e){
@@ -330,11 +331,7 @@ public void keyPressed(KeyEvent e){
 
 }
 
-		//else if (key == KeyEvent.VK_SPACE && !isShooting){
-
-			//isShooting = true;
-
-			//c.addBullet(new Bullet(p.getX(), p.getY(), tex));}
+		
 
 		
 

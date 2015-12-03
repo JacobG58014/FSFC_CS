@@ -1,0 +1,16 @@
+package Main;
+
+public class LinkedList {
+	 private Link first; // ref to the first link on the list
+
+	 public void Linked_List(){ // constructor
+	 first = null; // no items on the list yet
+	 }
+
+	 public boolean isEmpty(){
+	 return (first==null); // true if list is empty
+	 }
+
+	 // other methods (adding to the list, removing etc
+	}
+

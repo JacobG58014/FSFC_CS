@@ -1,0 +1,163 @@
+package Main;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
+import javax.swing.*;
+
+public class Keith {
+	static String program;
+	static int array;
+	static String print;
+	static String yn;
+	String password;
+	static String pass;
+	static boolean yes = false;
+	LinkedList_Controller LLC;
+	
+public static void main(String args[]){
+	print = ("Hello! My name is Keith!");
+	print(print);
+
+	print = ("Who are you?");
+	print(print);
+	Scanner name = new Scanner(System.in);
+	pass = name.next();
+	
+	if(pass.equalsIgnoreCase( "Jacob")){
+		print = ("Ahh, Hello again!");
+		print(print);
+	}
+	else if(pass.equalsIgnoreCase( "Michael")){
+		print = ("We dont serve your kind here...");
+		print(print);
+		Exit();
+	}
+	for(;;){
+		print = ("Enter a program");
+		print(print);
+		Scanner sc = new Scanner(System.in);
+		program = sc.next();
+		
+		if(program.equalsIgnoreCase("Jacob")){
+			Jacob();
+		}
+		else if(program.equalsIgnoreCase("exit")){
+			Exit();
+		}
+		else if(program.equalsIgnoreCase("array")){
+			Array();
+		}
+		else if (program.equalsIgnoreCase("Michael")){
+		Michael();
+	}
+		else if (program.equalsIgnoreCase("Password")){
+			Password();
+		}
+		else if(program.equalsIgnoreCase("help")){
+			help();
+		}
+		print = ("---------------");
+		print(print);
+	}
+	
+	
+}
+private static void help() {
+print = ("");
+print(print);
+}
+private static void Password() {
+	while (yes == false){
+	print = ("Enter Password: ");
+	print(print);
+	Scanner sc = new Scanner (System.in);
+	pass = sc.next();
+	if (pass.equals("KEITH")){
+		yes = true;
+		print = ("Password Correct, Well Done!!");
+		print (print);
+		
+	}
+	else{
+		
+	}
+	}
+}
+
+private static void Michael() {
+print = ("Is Stoopid");
+print(print);
+}
+
+private static void Array() {
+	print = ("How big do you want your array?");
+	print(print);
+	Scanner sc = new Scanner(System.in);
+	array = sc.nextInt();
+	int[] x = new int[array];
+
+	for (int i=0; i < x.length; i++ ){
+		x[i] = (int) (1+ Math.random() * 10);
+	}
+	printArray(x);
+	}
+
+	public static void printArray(int[] x){
+		print = ("array is: ");
+		print(print);
+		for (int i = 0; i < x.length; i++){
+	System.out.print(x[i] + " ");
+		}
+System.out.println();
+		print = ("Do you want to order the array?");
+		print(print);
+		Scanner sc = new Scanner(System.in);
+		yn = sc.next();
+		if(yn.equalsIgnoreCase("Yes")){
+			int tempVal=0;
+			//the outer for loop manages the passes (4 in this case)
+			for(int i=0;i<x.length-1;++i){
+			//the inner loop does the swapping
+			for(int j=0;j<x.length-1;++j){
+			if(x[j]>x[j+1]){
+			tempVal = x[j];
+			x[j]=x[j+1];
+			x[j+1]=tempVal;
+			}
+			}
+			}
+			//let’s print the sorted array
+			for(int i=0; i<x.length; ++i){
+			System.out.print((x[i] + " "));
+			}
+			System.out.println();
+			}
+		else if(yn.equalsIgnoreCase("No")){
+			print = ("okay then...");
+			print(print);
+		}
+		else{
+			print = ("Not Acceptable!!");
+			print(print);
+		}
+
+
+}
+private static void Exit() {
+	print = ("---Bye Bye!---");
+	print(print);
+	System.exit(0);	
+}
+public static void Jacob(){
+		print = ("Is awesome");
+		print(print);
+	}
+
+public static void print(String print){
+	 System.out.println("** " + print + " **");
+}
+}
+
