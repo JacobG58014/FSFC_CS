@@ -1,0 +1,66 @@
+package Main;
+
+import java.io.*;
+
+public class TryCatch {
+	static String test;
+	public static void FileReaderUtil(){
+
+		
+		/*
+			
+			
+			try {
+				fw.append("FileW");
+			} catch (IOException e) {
+				System.out.println("NO");				
+				e.printStackTrace();
+			}
+			
+			BufferedReader bw = new BufferedReader(fw);
+			try {
+				test=bw.readLine();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//FileReader ReadJacob = new FileReader(Jacob);
+			 * 
+			 */
+		}
+	
+
+		
+	
+	public static void main(String args[]){
+		//FileReaderUtil();
+		System.out.println("Thing");
+		File Jacob = new File("Jacob.txt");
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(Jacob);
+			System.out.println("Thing1");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			fw.write("HELLO");
+			System.out.println("Thing2");
+		} catch (IOException e) {
+				System.out.println("Fail");
+				e.printStackTrace();
+		}
+
+		System.out.println("Thing3");
+	}
+	/*public static void write(BufferedWriter bw){
+		try {
+			bw.write("Buffered");
+		} catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("NOPE");
+		}	
+	}
+	*/
+}

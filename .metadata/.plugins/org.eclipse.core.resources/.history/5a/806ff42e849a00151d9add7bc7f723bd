@@ -1,0 +1,51 @@
+package Main;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class TryCatch {
+
+	public void FileReaderUtil(){
+		try{
+			File Jacob = new File("Jacob.txt");
+			FileWriter fw = null;
+			try {
+				fw = new FileWriter(Jacob);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				fw.write("HELLO");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			BufferedWriter bw = new BufferedWriter(fw);
+			try {
+				bw.write("BANTER");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("NOPE");
+			}
+			FileReader ReadJacob = new FileReader(Jacob);
+		}
+		catch(FileNotFoundException fnfException){
+			fnfException.printStackTrace();
+		}
+		finally{
+			System.out.println("FINALLY!!!");
+		}
+	}
+	public static void main(String args[]){
+		TryCatch tryCatch = new TryCatch();
+		tryCatch.FileReaderUtil();
+		System.out.println();
+	}
+	
+}
